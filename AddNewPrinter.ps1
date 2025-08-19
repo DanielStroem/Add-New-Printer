@@ -1,4 +1,4 @@
-﻿#Gets input of what the IP and name should be
+#Gets input of what the IP and name should be
 $name = Read-Host "Printer name"
 $ip = Read-Host "IP-address"
 
@@ -18,5 +18,5 @@ if (-not (Get-PrinterPort -Name $ip -ErrorAction SilentlyContinue)) {
 
 #Adds printer with the above specifications
 Write-Host "Adding printer..."
-Add-Printer -Name $name -DriverName $driver -PortName $ip -Shared
+Add-Printer -Name $name -DriverName $driver -PortName $ip -Shared -Published
 Write-Host "Printer has been added."
